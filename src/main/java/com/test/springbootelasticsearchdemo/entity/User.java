@@ -1,5 +1,6 @@
 package com.test.springbootelasticsearchdemo.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 import java.util.List;
 import javax.validation.constraints.NotNull;
@@ -21,6 +22,10 @@ public class User {
     @Field
     private String name;
     private Integer age;
+    /**
+     * 通过jackson映射字段名称.
+     */
+    @JsonProperty("birth_day")
     private Date birthDay;
 
     private List<Group> groups;
